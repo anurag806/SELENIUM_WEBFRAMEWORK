@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="Listeners.TestListners">
+        </listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="FirstTest">
+        <classes>
+            <class name="TestCases.LoginTest">
+                <methods><include name="signin"/>
+                    <include name="login"/>
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>
