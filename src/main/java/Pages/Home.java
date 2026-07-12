@@ -4,15 +4,15 @@ import Utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Home {
-WebDriver driver;
+public class Home extends BasePage {
+
 public Home(WebDriver driver) {
-this.driver=driver;
+    super(driver);
 }
 By sign=By.xpath("//a[@href=\"/login\"]");
 public void signin(){
     WaitUtils ut=new WaitUtils(driver);
-    ut.waitForVisibility(sign).click();
+    click(ut.waitForVisibility(sign));
 
 }
 }
