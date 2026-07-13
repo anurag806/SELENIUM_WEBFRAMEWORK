@@ -5,22 +5,19 @@ import Config.ConfigRead;
 import Pages.Home;
 import Pages.LoginPage;
 import Utils.LoggerUtils;
+import DataProvider.DataProviderUtils;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
-
-
 import static DriverFactory.driverfactory.getDriver;
-
-
 public class LoginTest extends Base {
 private static Logger log = LoggerUtils.getLogger(LoginTest.class);
-    @Test (priority = 1)public void login() throws InterruptedException {
-        LoginPage lp=new LoginPage(getDriver());
+    @Test (dataProvider ="LoginData",dataProviderClass = DataProviderUtils.class, priority = 1)
+    public void login(String email,String password) throws InterruptedException {
+        LoginPage lp = new LoginPage(getDriver());
         log.info("Login Page");
-        Home hm=new Home(getDriver());
+        Home hm = new Home(getDriver());
         hm.signin();
-        lp.login(ConfigRead.getProperty("email"),ConfigRead.getProperty("password"));
+        lp.login(email, password);
         log.info("Login Successful");
-
     }
 }
