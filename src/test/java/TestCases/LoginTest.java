@@ -7,6 +7,7 @@ import Pages.LoginPage;
 import Utils.LoggerUtils;
 import DataProvider.DataProviderUtils;
 import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import static DriverFactory.driverfactory.getDriver;
 public class LoginTest extends Base {
@@ -19,5 +20,7 @@ private static Logger log = LoggerUtils.getLogger(LoginTest.class);
         hm.signin();
         lp.login(email, password);
         log.info("Login Successful");
+        log.info("checking login status");
+        Assert.assertTrue(hm.isLoggedOutVisible(),"Login Failed");
     }
 }
