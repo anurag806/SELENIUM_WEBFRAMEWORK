@@ -5,22 +5,24 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Home extends BasePage {
-
+ private  final WaitUtils ul;
 public Home(WebDriver driver) {
     super(driver);
+    ul = new WaitUtils(driver);
 }
-By sign=By.xpath("//a[@href=\"/login\"]");
-By logout=By.xpath("//a[@href=\"/logout\"]");
+private final By sign=By.xpath("//a[@href=\"/login\"]");
+private final By logout=By.xpath("//a[@href=\"/logout\"]");
 public void signin(){
-    WaitUtils ut=new WaitUtils(driver);
-    click(ut.waitForVisibility(sign));
+    click(ul.waitForVisibility(sign));
 }
 public void  logout(){
-    WaitUtils ut=new WaitUtils(driver);
-    click(ut.waitForVisibility(logout));
+    click(ul.waitForVisibility(logout));
 }
 public boolean isLoggedOutVisible(){
-    WaitUtils ut=new WaitUtils(driver);
-    return isElementPresent(ut.waitForVisibility(logout));
+
+    return isElementPresent(ul.waitForVisibility(logout));
 }
+    public boolean isLoginVisible() {
+        return isElementPresent(ul.waitForVisibility(sign));
+    }
 }
