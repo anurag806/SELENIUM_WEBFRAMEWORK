@@ -8,8 +8,9 @@
     <test verbose="2" preserve-order="true" name="FirstTest">
         <classes>
             <class name="TestCases.LoginTest">
-                <methods><include name="signin"/>
+                <methods>
                     <include name="login"/>
+                    <include name="invalidLogin"/>
                 </methods>
             </class>
         </classes>

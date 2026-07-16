@@ -22,5 +22,18 @@ private static Logger log = LoggerUtils.getLogger(LoginTest.class);
         log.info("Login Successful");
         log.info("checking login status");
         Assert.assertTrue(hm.isLoggedOutVisible(),"Login Failed");
+        log.info("logged In");
     }
+    @Test (dataProvider = "InvalidLoginData",dataProviderClass = DataProviderUtils.class)
+    public void invalidLogin(String email,String password) throws InterruptedException {
+        LoginPage lp = new LoginPage(getDriver());
+        Home hm = new Home(getDriver());
+        log.info("Opening Login Page");
+        hm.signin();
+        lp.login(email, password);
+        log.info("checking login ");
+        Assert.assertTrue(lp.iserror(),"Login Failed");
+
+    }
+
 }
