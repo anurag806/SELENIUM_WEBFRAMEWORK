@@ -13,6 +13,11 @@
                     <include name="invalidLogin"/>
                 </methods>
             </class>
+            <class name="TestCases.LogoutTest">
+                <methods>
+                    <include name="LogOutTest"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
