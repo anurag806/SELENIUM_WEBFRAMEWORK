@@ -22,18 +22,26 @@ public LoginPage(WebDriver driver) {
     private final By signsubmit=By.xpath("//button[@data-qa=\"signup-button\"]");
     //login function with existing credentails for signup
     private final By existmsg=By.xpath("//p[text()=\"Email Address already exist!\"]");
+    //heading for signup
+    private final By Welcomeheading=By.xpath("//h2[text()=\"New User Signup!\"]");
 
+    public boolean ValidateSign(){
+        return ul.waitForVisibility(Welcomeheading).isDisplayed();
+    }
 
      public void login(String emailvalue, String passwordvalue) {
          type(driver.findElement(email), emailvalue);
          type(driver.findElement(password), passwordvalue);
-         click(ul.waitForVisibility(submit));
+         ul.waitForVisibility(submit);
+         click(submit);
+
      }
 //signup with name and email
      public void Existsignup(String namevalue, String signemailvalue) {
          type(driver.findElement(signname), namevalue);
          type(driver.findElement(signemail), signemailvalue);
-         click(ul.waitForVisibility(signsubmit));
+         ul.waitForVisibility(signsubmit);
+         click(signsubmit);
      }
      //checking  login error when given wrong credential in login
      public boolean iserror(){

@@ -1,20 +1,24 @@
 package Pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class BasePage {
     protected WebDriver driver;
     public BasePage(WebDriver driver) {
         this.driver = driver;
     }
-    protected  void click(WebElement element){
-        element.click();
+    protected  void click(By element){
+
+        driver.findElement(element).click();
     }
     protected  void type(WebElement element,String text){
         element.clear();
         element.sendKeys(text);
     }
     protected void clear(WebElement element){
+
         element.clear();
     }
     protected String getText(WebElement element){
@@ -31,5 +35,17 @@ public class BasePage {
     }
     protected String getTitle(){
         return driver.getTitle();
+    }
+    protected void SelectedByVisibleText(By locator,String text){
+        Select select = new Select(driver.findElement(locator));
+        select.selectByVisibleText(text);
+    }
+    protected void SelectedByValue(By locator,String value){
+        Select select = new Select(driver.findElement(locator));
+        select.selectByValue(value);
+    }
+    protected void SelectByIndex(By locator,int index){
+        Select select = new Select(driver.findElement(locator));
+        select.selectByIndex(index);
     }
 }

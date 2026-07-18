@@ -13,10 +13,14 @@ public Home(WebDriver driver) {
 private final By sign=By.xpath("//a[@href=\"/login\"]");
 private final By logout=By.xpath("//a[@href=\"/logout\"]");
 public void signin(){
-    click(ul.waitForVisibility(sign));
+
+    ul.waitForVisibility(sign);
+    click(sign);
 }
 public void  logout(){
-    click(ul.waitForVisibility(logout));
+
+    ul.waitForVisibility(logout);
+    click(logout);
 }
 public boolean isLoggedOutVisible(){
 

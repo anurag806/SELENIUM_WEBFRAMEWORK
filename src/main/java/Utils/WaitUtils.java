@@ -66,14 +66,4 @@ public class WaitUtils {
     public boolean waitForText(By locator, String text) {
         return wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
     }
-
-    // Wait until element is visible (WebElement)
-    public WebElement waitForVisibility(WebElement element) {
-        return wait.until(ExpectedConditions.visibilityOf(element));
-    }
-
-    // Wait until element is clickable (WebElement)
-    public WebElement waitForClickable(WebElement element) {
-        return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
 }
