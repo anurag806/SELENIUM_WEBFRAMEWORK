@@ -14,7 +14,7 @@ import static DriverFactory.driverfactory.getDriver;
 public class LogoutTest extends Base {
     private static Logger log = LoggerUtils.getLogger(LogoutTest.class);
     @Test
-    public void LogoutTest(){
+    public void LogOutTest(){
         Home hm=new Home(getDriver());
         hm.signin();
         log.info("Going to login");
@@ -26,9 +26,7 @@ public class LogoutTest extends Base {
         hm.logout();
         log.info("logout...");
 
-    Assert.assertTrue(hm.isLoginVisible(),
-            "Logout was not successful");
-
+    Assert.assertTrue(hm.isLoginVisible(), "Logout was not successful");
     log.info("Logout verified successfully");
     }
 }

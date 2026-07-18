@@ -18,6 +18,7 @@
                     <include name="LogOutTest"/>
                 </methods>
             </class>
+            <class name="TestCases.ExistingUserSignupError"></class>
         </classes>
     </test>
 </suite>
