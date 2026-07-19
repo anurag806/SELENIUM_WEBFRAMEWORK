@@ -1,8 +1,9 @@
-package DataProvider;
-public class RegisterConstant {
+package Constant;
 
+public final class RegisterConstant {
+
+    // Prevent object creation
     private RegisterConstant() {
-        // Prevent object creation
     }
 
     // Title
@@ -16,17 +17,21 @@ public class RegisterConstant {
     public static final String MONTH = "August";
     public static final String YEAR = "1998";
 
-    // Address Information
+    // Personal Information
     public static final String LAST_NAME = "Pandey";
     public static final String COMPANY = "Rackspace";
+
+    // Address Information
     public static final String ADDRESS1 = "Kanpur Road";
     public static final String ADDRESS2 = "Near Bus Stand";
 
     // Country
     public static final String COUNTRY = "India";
 
-    // Location
+    // State & City
     public static final String STATE = "Uttar Pradesh";
     public static final String CITY = "Unnao";
+
+    // Zip Code
     public static final String ZIPCODE = "209801";
 }
