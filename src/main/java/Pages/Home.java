@@ -51,6 +51,13 @@ public class Home extends BasePage {
     }
 
     public boolean isLoggedOutVisible() {
+
         return ul.waitForVisibility(logout).isDisplayed();
+    }
+    //CLick on Products
+    private final By product = By.xpath("//a[@href='/products']");
+    public void clickOnProduct() {
+        ul.waitForClickable(product);
+        click(product);
     }
 }
