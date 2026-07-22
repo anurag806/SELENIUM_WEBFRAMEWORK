@@ -2,6 +2,9 @@ package Pages;
 import Utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class ProductPage extends BasePage {
     private WaitUtils ul;
@@ -56,5 +59,43 @@ public class ProductPage extends BasePage {
     public String clickFirstProductName(){
        return ul.waitForClickable(firstProductName).getText();
     }
+    private final By addedPopup =
+            By.xpath("//h4[text()='Added!']");
 
+    public boolean isAddedPopupDisplayed() {
+        return ul.waitForVisibility(addedPopup).isDisplayed();
+    }
+    private final By firstProduct =
+            By.xpath("(//div[@class='single-products'])[1]");
+
+    public void hoverOnFirstProduct() {
+        Hover(firstProduct);
+    }
+    public void clickAddToCart() {
+
+        hoverOnFirstProduct();
+
+        List<WebElement> buttons =
+                driver.findElements(By.xpath("//a[@data-product-id='1']"));
+
+        for (WebElement button : buttons) {
+            if (button.isDisplayed()) {
+                try {
+                    button.click();
+                } catch (Exception e) {
+                    jsClick(button);
+                }
+                return;
+            }
+        }
+
+        throw new RuntimeException("Visible Add To Cart button not found.");
+    }
+    private final By viewCart =
+            By.xpath("//u[text()='View Cart']");
+
+    public void clickViewCart() {
+        ul.waitForClickable(viewCart);
+        click(viewCart);
+    }
 }

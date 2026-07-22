@@ -44,4 +44,20 @@ public class ProductsDetailsPage extends BasePage {
     public boolean VerifyBrand(){
         return ul.waitForVisibility(brand).isDisplayed();
     }
+    //hover on firstproduct
+    private final By firstpro=By.cssSelector(".product-image-wrapper");
+    public void HoveronFirst(){
+        Hover(firstpro);
+    }
+    //add to cart click
+    private final By AddCart=By.xpath("(//a[@class=\"btn btn-default add-to-cart\"])[1]");
+    public void ClickonAddCart(){
+        ul.waitForClickable(AddCart).click();
+    }
+    //clicking on view cart
+    private final By ViewCart=By.xpath("//u[text()='View Cart']");
+    public void ClickonViewCart(){
+        ul.waitForClickable(ViewCart).click();
+    }
+
 }

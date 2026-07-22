@@ -1,7 +1,9 @@
 package Pages;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class BasePage {
@@ -48,4 +50,13 @@ public class BasePage {
         Select select = new Select(driver.findElement(locator));
         select.selectByIndex(index);
     }
+    protected void Hover(By locator){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(driver.findElement(locator)).perform();
+    }
+    protected void jsClick(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
+    }
+
 }
