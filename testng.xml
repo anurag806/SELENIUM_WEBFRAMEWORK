@@ -21,6 +21,7 @@
             <class name="TestCases.ExistingUserSignupError"></class>
             <class name="TestCases.ProductDetailsTest"></class>
             <class name="TestCases.ProductSearchTest"></class>
+            <class name="TestCases.AddToCartTest"></class>
         </classes>
     </test>
 </suite>

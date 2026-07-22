@@ -20,4 +20,15 @@ public class CartPage extends BasePage {
         return ul.waitForVisibility(cartProduct).isDisplayed();
 
     }
+    //delete the cart item
+    private final By Delpro=By.cssSelector(".cart_quantity_delete");
+    public void ClickDeleteProduct() {
+        ul.waitForVisibility(Delpro);
+        click(Delpro);
+    }
+    //cart is empty
+    private final By Cartempty=By.xpath("//b[text()=\"Cart is empty!\"]");
+    public boolean IsEmptyCart() {
+        return ul.waitForVisibility(Cartempty).isDisplayed();
+    }
 }
