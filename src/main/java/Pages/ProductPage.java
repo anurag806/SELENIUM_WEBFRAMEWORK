@@ -19,5 +19,11 @@ public class ProductPage extends BasePage {
     public boolean isProductListDisplayed() {
         return ul.waitForVisibility(productslist).isDisplayed();
     }
-
+   // click on first Product
+   private final By firstViewProduct =
+           By.xpath("(//a[text()='View Product'])[1]");
+    public void clickProduct(){
+        ul.waitForClickable(firstViewProduct);
+        click(firstViewProduct);
+    }
 }

@@ -19,6 +19,7 @@
                 </methods>
             </class>
             <class name="TestCases.ExistingUserSignupError"></class>
+            <class name="TestCases.ProductDetailsTest"></class>
         </classes>
     </test>
 </suite>
