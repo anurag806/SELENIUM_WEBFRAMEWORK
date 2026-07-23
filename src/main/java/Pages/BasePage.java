@@ -70,7 +70,7 @@ public class BasePage {
     }
     public void safeClick(By locator) {
 
-        WebElement element = ul.waitForVisibility(locator);
+        WebElement element = ul.waitForClickable(locator);
 
         jsScrollIntoView(element);
 

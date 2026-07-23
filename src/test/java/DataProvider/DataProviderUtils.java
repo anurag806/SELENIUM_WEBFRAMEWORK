@@ -29,4 +29,9 @@ public class DataProviderUtils {
         excel.close();
         return data;
     }
+    @DataProvider (name="PlaceOrderData")
+    public Object[][] PlaceOrderData(){
+        return getData("PlaceOrderData");
+
+    }
 }

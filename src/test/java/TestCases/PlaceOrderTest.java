@@ -31,7 +31,6 @@ public class PlaceOrderTest extends  Base{
         CartPage cartPage = new CartPage(getDriver());
         cartPage.ClickCheckout();
         log.info("Checkout Successful");
-
     }
 
 }
