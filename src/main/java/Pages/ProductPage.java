@@ -107,4 +107,61 @@ public class ProductPage extends BasePage {
         ul.waitForClickable(viewCart);
         click(viewCart);
     }
+    //expand women category
+    private final By womenPlus =
+            By.xpath("(//i[@class='fa fa-plus'])[1]");
+    public void clickWomenPlus() {
+        ul.waitForClickable(womenPlus);
+        safeClick(womenPlus);
+    }
+    //clicking on the dispalyed in women category
+    private final By Dress=By.xpath("//a[@href='/category_products/1']");
+    public void clickDress() {
+        ul.waitForClickable(Dress);
+        safeClick(Dress);
+    }
+    private final By Tops=By.xpath("//a[@href='/category_products/2']");
+    public void clickTops() {
+        ul.waitForClickable(Tops);
+        safeClick(Tops);
+    }
+    private  final By Saree=By.xpath("//a[@href='/category_products/7']");
+    public void clickSaree() {
+        ul.waitForClickable(Saree);
+        safeClick(Saree);
+    }
+    //expand men category
+    private final By menPlus =
+            By.xpath("(//i[@class='fa fa-plus'])[2]");
+    public void clickMenPlus() {
+        ul.waitForClickable(menPlus);
+        safeClick(menPlus);
+    }
+    private final By Tshirt=By.xpath("//a[@href='/category_products/3']");
+    public void clickTshirt() {
+        ul.waitForClickable(Tshirt);
+        safeClick(Tshirt);
+    }
+    private final By Jeans=By.xpath("//a[@href='/category_products/6']");
+    public void clickJeans() {
+        ul.waitForClickable(Jeans);
+        safeClick(Jeans);
+    }
+    //expand kids category
+    private final By kidsPlus =
+            By.xpath("(//i[@class='fa fa-plus'])[3]");
+    public void clickKidsPlus() {
+        ul.waitForClickable(kidsPlus);
+        safeClick(kidsPlus);
+    }
+    private final By KidDress=By.xpath("//a[@href='/category_products/4']");
+    public void ClickKidDress(){
+        ul.waitForClickable(KidDress);
+        safeClick(KidDress);
+    }
+    private final By Topsshirt=By.xpath("//a[@href='/category_products/5']");
+    public void clickTopsshirt() {
+        ul.waitForClickable(Topsshirt);
+        safeClick(Topsshirt);
+    }
 }

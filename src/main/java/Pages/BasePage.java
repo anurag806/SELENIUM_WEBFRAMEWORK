@@ -1,4 +1,5 @@
 package Pages;
+import Utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -8,8 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 
 public class BasePage {
     protected WebDriver driver;
+    private WaitUtils ul;
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        ul=new WaitUtils(driver);
     }
     protected  void click(By element){
 
@@ -65,5 +68,16 @@ public class BasePage {
                 "arguments[0].scrollIntoView({block:'center'});",
                 element);
     }
+    public void safeClick(By locator) {
 
+        WebElement element = ul.waitForVisibility(locator);
+
+        jsScrollIntoView(element);
+
+        try {
+            element.click();
+        } catch (Exception e) {
+            jsClick(element);
+        }
+    }
 }
