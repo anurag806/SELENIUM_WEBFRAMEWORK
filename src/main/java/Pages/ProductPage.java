@@ -25,10 +25,19 @@ public class ProductPage extends BasePage {
    // click on first Product
    private final By firstViewProduct =
            By.xpath("(//a[text()='View Product'])[1]");
-    public void clickProduct(){
-        ul.waitForClickable(firstViewProduct);
-        click(firstViewProduct);
-    }
+   public void clickProduct() {
+
+       WebElement product =
+               ul.waitForVisibility(firstViewProduct);
+
+       jsScrollIntoView(product);
+
+       try {
+           product.click();
+       } catch (Exception e) {
+           jsClick(product);
+       }
+   }
     //Search Product
     private final By search=By.id("search_product");
     public void getProductName(String productName){

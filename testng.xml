@@ -22,6 +22,7 @@
             <class name="TestCases.ProductDetailsTest"></class>
             <class name="TestCases.ProductSearchTest"></class>
             <class name="TestCases.AddToCartTest"></class>
+            <class name="TestCases.VerifyProductQuantityTest"></class>
         </classes>
     </test>
 </suite>

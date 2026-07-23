@@ -31,4 +31,10 @@ public class CartPage extends BasePage {
     public boolean IsEmptyCart() {
         return ul.waitForVisibility(Cartempty).isDisplayed();
     }
+    private final By quantity =
+            By.cssSelector(".cart_quantity button");
+    public String getProductQuantity() {
+
+        return ul.waitForVisibility(quantity).getText();
+    }
 }

@@ -50,7 +50,8 @@ public class ProductsDetailsPage extends BasePage {
         Hover(firstpro);
     }
     //add to cart click
-    private final By AddCart=By.xpath("(//a[@class=\"btn btn-default add-to-cart\"])[1]");
+    private final By AddCart =
+            By.xpath("//button[@type='button']");
     public void ClickonAddCart(){
         ul.waitForClickable(AddCart).click();
     }
@@ -59,5 +60,13 @@ public class ProductsDetailsPage extends BasePage {
     public void ClickonViewCart(){
         ul.waitForClickable(ViewCart).click();
     }
+//adding quantity
+private final By quantity = By.id("quantity");
+
+    public void enterQuantity(String qty) {
+        clear(ul.waitForVisibility(quantity));
+        type(ul.waitForVisibility(quantity), qty);
+    }
+
 
 }

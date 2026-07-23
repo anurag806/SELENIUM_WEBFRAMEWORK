@@ -58,5 +58,12 @@ public class BasePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", element);
     }
+    protected void jsScrollIntoView(WebElement element) {
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript(
+                "arguments[0].scrollIntoView({block:'center'});",
+                element);
+    }
 
 }
