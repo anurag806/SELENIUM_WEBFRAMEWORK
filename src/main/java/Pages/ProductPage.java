@@ -102,11 +102,16 @@ public class ProductPage extends BasePage {
     }
     private final By viewCart =
             By.xpath("//u[text()='View Cart']");
+    private final By viewCartHeading=By.xpath("//a[@href=\"/view_cart\"]");
 
     public void clickViewCart() {
-        ul.waitForClickable(viewCart);
-        click(viewCart);
+        try {
+            safeClick(viewCart);
+        } catch (Exception e) {
+            safeClick(viewCartHeading);
+        }
     }
+
     //expand women category
     private final By womenPlus =
             By.xpath("(//i[@class='fa fa-plus'])[1]");

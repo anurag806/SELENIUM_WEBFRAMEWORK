@@ -67,6 +67,4 @@ private final By quantity = By.id("quantity");
         clear(ul.waitForVisibility(quantity));
         type(ul.waitForVisibility(quantity), qty);
     }
-
-
 }

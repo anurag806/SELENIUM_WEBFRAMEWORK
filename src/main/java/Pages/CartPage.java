@@ -37,4 +37,9 @@ public class CartPage extends BasePage {
 
         return ul.waitForVisibility(quantity).getText();
     }
+    private final By checkout=By.cssSelector(".check_out");
+    public void ClickCheckout() {
+        ul.waitForVisibility(checkout);
+        safeClick(checkout);
+    }
 }
