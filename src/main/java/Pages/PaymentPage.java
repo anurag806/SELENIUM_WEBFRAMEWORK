@@ -84,4 +84,11 @@ public class PaymentPage extends BasePage {
     public void clickContinue() {
         safeClick(continueButton);
     }
+    //click Download invoice
+    private final By downloadInvoice =
+            By.cssSelector("a.btn.btn-default.check_out");
+    public void clickDownloadinvoice() {
+        ul.waitForClickable(downloadInvoice);
+        safeClick(downloadInvoice);
+    }
 }

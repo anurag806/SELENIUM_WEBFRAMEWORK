@@ -26,6 +26,7 @@
             <class name="TestCases.PlaceOrderTest"></class>
             <class name="TestCases.ContactUSTest"></class>
             <class name="TestCases.ProductReviewTest"></class>
+        <class name="TestCases.PlaceOrderInvoiceTest"></class>
         </classes>
     </test>
 </suite>
