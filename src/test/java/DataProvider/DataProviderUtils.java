@@ -42,4 +42,8 @@ public class DataProviderUtils {
     public Object[][] Subscription(){
         return getData("Subscription");
     }
+    @DataProvider(name="ProductReview")
+    public Object[][] ProductReview(){
+        return getData("ProductReview");
+    }
 }

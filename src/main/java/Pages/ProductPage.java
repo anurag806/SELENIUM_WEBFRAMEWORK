@@ -169,4 +169,9 @@ public class ProductPage extends BasePage {
         ul.waitForClickable(Topsshirt);
         safeClick(Topsshirt);
     }
+    private final By FirstviewProduct=By.xpath("//a[@href=\"/product_details/1\"]");
+    public void clickFirstviewProduct() {
+        ul.waitForClickable(FirstviewProduct);
+        safeClick(FirstviewProduct);
+    }
 }

@@ -67,4 +67,31 @@ private final By quantity = By.id("quantity");
         clear(ul.waitForVisibility(quantity));
         type(ul.waitForVisibility(quantity), qty);
     }
+    //adding name for review
+    private final By names = By.id("name");
+    public void enterName(String name) {
+        type(ul.waitForVisibility(names),name);
+    }
+    //adding email
+    private final By EM = By.id("email");
+    public void enterEmail(String email) {
+        type(ul.waitForVisibility(EM),email);
+    }
+    //adding review
+    private final By reviews=By.id("review");
+    public void enterReview(String review) {
+        type(ul.waitForVisibility(reviews),review );
+    }
+    //click on submit
+    private final By clickSubmit=By.id("button-review");
+    public void clickSubmit(){
+        ul.waitForClickable(clickSubmit);
+        safeClick(clickSubmit);
+    }
+    //review message
+    private final By reviewSuccessMessage =
+            By.xpath("//span[text()='Thank you for your review.']");
+    public boolean isReviewSubmitted() {
+        return ul.waitForVisibility(reviewSuccessMessage).isDisplayed();
+    }
 }
