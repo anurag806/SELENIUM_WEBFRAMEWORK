@@ -34,4 +34,8 @@ public class DataProviderUtils {
         return getData("PlaceOrderData");
 
     }
+    @DataProvider(name="ContactUS")
+    public Object[][] ContactUS(){
+        return getData("ContactUS");
+    }
 }

@@ -49,6 +49,7 @@ public class WaitUtils {
 
     // Wait until alert appears
     public Alert waitForAlert() {
+
         return wait.until(ExpectedConditions.alertIsPresent());
     }
 

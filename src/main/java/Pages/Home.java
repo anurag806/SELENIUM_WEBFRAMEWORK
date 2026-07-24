@@ -60,4 +60,10 @@ public class Home extends BasePage {
         ul.waitForClickable(product);
         click(product);
     }
+    //click on Contact Us page
+    private final By contactus=By.xpath("//a[@href='/contact_us']");
+    public void clickOnContactus() {
+        ul.waitForClickable(contactus);
+        safeClick(contactus);
+    }
 }

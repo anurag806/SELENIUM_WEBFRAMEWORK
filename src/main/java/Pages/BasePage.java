@@ -18,9 +18,10 @@ public class BasePage {
 
         driver.findElement(element).click();
     }
-    protected  void type(WebElement element,String text){
+    protected String type(WebElement element, String text){
         element.clear();
         element.sendKeys(text);
+        return text;
     }
     protected void clear(WebElement element){
 
