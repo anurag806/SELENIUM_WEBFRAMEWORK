@@ -42,4 +42,15 @@ public class CartPage extends BasePage {
         ul.waitForVisibility(checkout);
         safeClick(checkout);
     }
+    //subscribe email
+    private final By  subemail = By.id("susbscribe_email");
+    public void EnterEmail(String email){
+        type(ul.waitForVisibility(subemail),email );
+    }
+    //subscribe button
+    private final By subs=By.id("subscribe");
+    public void clickOnSubs() {
+        ul.waitForClickable(subs);
+        safeClick(subs);
+    }
 }

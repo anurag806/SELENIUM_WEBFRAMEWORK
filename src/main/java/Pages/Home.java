@@ -66,4 +66,21 @@ public class Home extends BasePage {
         ul.waitForClickable(contactus);
         safeClick(contactus);
     }
+    //subscribe email
+    private final By  subemail = By.id("susbscribe_email");
+    public void EnterEmail(String email){
+        type(ul.waitForVisibility(subemail),email );
+    }
+    //subscribe button
+    private final By subs=By.id("subscribe");
+    public void clickOnSubs() {
+        ul.waitForClickable(subs);
+        safeClick(subs);
+    }
+    //click on Cart Page
+    private final By cartpage=By.xpath("//a[@href='/view_cart']");
+    public void clickOnCart() {
+        ul.waitForClickable(cartpage);
+        safeClick(cartpage);
+    }
 }

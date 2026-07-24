@@ -38,4 +38,8 @@ public class DataProviderUtils {
     public Object[][] ContactUS(){
         return getData("ContactUS");
     }
+    @DataProvider(name="Subscription")
+    public Object[][] Subscription(){
+        return getData("Subscription");
+    }
 }
